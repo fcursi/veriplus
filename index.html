@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#5b3fd9">
+<meta name="theme-color" content="#4528c0">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Veri+">
@@ -20,8 +20,8 @@
    PICTURE: o próprio app; o ícone flutuante (escudo) é a peça central.
    COLOUR and TYPE: lilás #efeafd, roxo #5b3fd9, verde/amarelo/vermelho só para status; Plus Jakarta Sans.
    LAYOUT: Início · Aprender · Histórico · Configurações, com telas internas empilhadas. */
-:root{color-scheme:light;--bg:#efeafd;--app:#f7f5ff;--card:#fff;--ink:#17142b;--mut:#6b6788;--line:#e6e1f7;
---pu:#5b3fd9;--pu2:#7c5cf2;--pul:#ece6ff;--ok:#15803d;--okl:#dcfce7;--warn:#b45309;--warnl:#fff4d1;--bad:#dc2647;--badl:#ffe1e6;--neu:#6b7280;--neul:#eceef2;--fs:16px}
+:root{color-scheme:light;--bg:#efeafd;--app:#f7f5ff;--card:#fff;--ink:#17142b;--mut:#45415f;--line:#e6e1f7;
+--pu:#4528c0;--pu2:#5b3fd9;--pul:#ece6ff;--ok:#15803d;--okl:#dcfce7;--warn:#b45309;--warnl:#fff4d1;--bad:#dc2647;--badl:#ffe1e6;--neu:#6b7280;--neul:#eceef2;--fs:16px}
 :root.hc{--ink:#000;--mut:#222;--line:#000;--card:#fff;--app:#fff;--pu:#3a1fb8}
 :root.cb{--ok:#1f6fd1;--okl:#dbeafe;--bad:#d1661f;--badl:#ffe8d6}
 *{box-sizing:border-box;min-width:0}
@@ -110,8 +110,8 @@ a.btn{text-decoration:none}.btn.wa{background:#0f7a4a;color:#fff;margin-top:8px}
 .wel .wtop{display:flex;flex-wrap:wrap;gap:6px;padding:14px 14px 0}.wel .wtop button{min-height:44px;border:2px solid rgba(255,255,255,.6);background:none;color:#fff;border-radius:12px;padding:0 12px;font:inherit;font-weight:700;font-size:14px}.wel .wtop button[aria-pressed=true],.wel .wtop button.on{background:#fff;color:var(--pu)}
 .wel .whd{padding:14px 18px 6px}.wel .whd h1{font-size:26px}.wel .whd p{margin:6px 0 0;font-size:17px;line-height:1.4}.wel .heard{background:rgba(255,255,255,.18);border-radius:10px;padding:6px 10px}
 .wel .bands{flex:1;display:grid;grid-auto-rows:1fr;gap:10px;padding:8px 14px 16px;min-height:330px}
-.wel .band{border:0;border-radius:22px;background:#fff;color:var(--pu);font:inherit;font-size:24px;font-weight:800;line-height:1.2;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:10px 16px;text-align:center}
-.wel .band small{font-size:14px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.04em}
+.wel .band{border:3px solid #17142b;border-radius:22px;background:#fff;color:#17142b;font:inherit;font-size:24px;font-weight:800;line-height:1.2;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:10px 16px;text-align:center}
+.wel .band small{font-size:15px;font-weight:800;color:#2e1a8f;text-transform:uppercase;letter-spacing:.04em}
 .wel .go{margin-top:8px;min-height:60px;border:0;border-radius:16px;background:#fff;color:var(--pu);font:inherit;font-weight:800;font-size:20px}
 .qa .wide{grid-column:1/-1}
 #fab,#sheet,#toast{display:none!important}
@@ -787,8 +787,8 @@ function telaNarr(){const top=S.stack[S.stack.length-1];
  if(top&&top.s==='assist')return 'Tela Assistente. Escreva ou fale sua dúvida no campo no fim da tela. Há sugestões de perguntas, e botões para respostas mais simples, ouvir as respostas e ver em Libras.';
  if(top){const h=$('#scr h1');const c=$('#scr').cloneNode(true);c.querySelectorAll('button,svg').forEach(x=>x.remove());blk(c);return 'Tela '+(h?h.textContent:'')+'. '+c.textContent.replace(/\s+/g,' ').replace(/\.\s*\./g,'.').trim().slice(0,450)}
  const n=KB.filter(k=>!k.hidden&&S.cfg.temas[k.tema]!==false).length;const r0=S.hist[0];
- return {inicio:'Tela Início: informações cívicas. Três seções: Eleições e voto, Direitos da pessoa cega, e Governo e participação. Cada tema é um botão. Depois, Perto de você, com instituições e projetos em Pernambuco. No fim, Mitos e verdades e Aprender a verificar. No canto inferior esquerdo, o botão de acessibilidade. Embaixo, o menu: Início, Aprender, Mitos e Ajustes.',
-  aprender:'Tela Aprender. Desafio do dia, seu progresso e pontos, desafios para treinar, trilhas para aprender a verificar e livros.',
+ return {inicio:'Tela Início. Primeiro, os botões Verificar um vídeo do YouTube e Denunciar um vídeo ou boato. Depois, três seções: Eleições e voto, Direitos da pessoa cega, e Governo e participação. Cada tema é um botão. Depois, Perto de você, com instituições e projetos em Pernambuco. No fim, Mitos e verdades e Aprender a verificar. No canto inferior esquerdo, o botão de acessibilidade. Embaixo, o menu: Início, Aprender, Mitos e Ajustes.',
+  aprender:'Tela Aprender. Desafio do dia, seu progresso e pontos, desafios para treinar, e trilhas para aprender a verificar.',
   mitos:'Tela Mitos e verdades. Boatos que circulam, separados por tema. Cada um diz se é falso, verdadeiro ou fora de contexto, e abre a explicação com fontes.',
   config:'Tela Ajustes. Acessibilidade: narração, leitor de tela, letra, contraste, leitura fácil, Libras e modo daltônico. Depois, privacidade e fontes.'}[S.nav]}
 function modalNarr(){const m=ov.querySelector('.modal');if(!m)return '';const c=m.cloneNode(true);c.querySelectorAll('button,svg,.libras').forEach(x=>x.remove());blk(c);
@@ -913,21 +913,41 @@ AFIRMAÇÃO PRINCIPAL: uma frase
 EXPLICAÇÃO: até 4 frases, dizendo o que as fontes mostram
 TEXTO NA TELA: o texto escrito que aparece no vídeo, se houver
 Regras: só dê Confere, Não confere ou Fora de contexto se a pesquisa encontrou checagem de agência ou fonte oficial que comprove. Prefira fontes independentes de quem fez o vídeo. Sem prova, o veredito é Não consegui verificar. Nunca invente fontes.`;
-let GMODEL=null;
-async function gModel(key){if(GMODEL)return GMODEL;try{const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key='+encodeURIComponent(key));const j=await r.json();const ms=(j.models||[]).filter(m=>/flash/.test(m.name)&&!/lite|image|tts|live|audio|embed|thinking|exp|preview/.test(m.name)&&(m.supportedGenerationMethods||[]).includes('generateContent')).map(m=>m.name.replace('models/',''));const v=n=>{const x=n.match(/(\d+(?:\.\d+)?)/);return x?parseFloat(x[1]):0};ms.sort((a,b)=>v(b)-v(a)||a.length-b.length);GMODEL=ms[0]||'gemini-2.5-flash'}catch(e){GMODEL='gemini-2.5-flash'}return GMODEL}
-function ytNorm(u){const m=u.match(/(?:youtu\.be\/|shorts\/|[?&]v=)([\w-]{11})/);return m?'https://www.youtube.com/watch?v='+m[1]:u}
-async function verifyVideo(url,key){url=ytNorm(url);const model=await gModel(key);const ac=new AbortController();const t=setTimeout(()=>ac.abort(),120000);
+let GMODELS=null;
+async function gModels(key){if(GMODELS)return GMODELS;let ms=[];try{const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key='+encodeURIComponent(key));const j=await r.json();ms=(j.models||[]).filter(m=>/flash/.test(m.name)&&!/image|tts|live|audio|embed|thinking|exp/.test(m.name)&&(m.supportedGenerationMethods||[]).includes('generateContent')).map(m=>m.name.replace('models/',''))}catch(e){}
+ const v=n=>{const x=n.match(/(\d+(?:\.\d+)?)/);return x?parseFloat(x[1]):0};const pv=n=>/preview/.test(n)?1:0;const lt=n=>/lite/.test(n)?1:0;
+ ms.sort((a,b)=>pv(a)-pv(b)||lt(a)-lt(b)||v(b)-v(a)||a.length-b.length);
+ ['gemini-2.5-flash','gemini-2.0-flash','gemini-2.5-flash-lite'].forEach(f=>{if(!ms.includes(f))ms.push(f)});GMODELS=ms.slice(0,6);return GMODELS}
+async function callModel(model,url,key){const ac=new AbortController();const t=setTimeout(()=>ac.abort(),120000);
  try{const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(key)}`,{method:'POST',headers:{'Content-Type':'application/json'},signal:ac.signal,body:JSON.stringify({contents:[{parts:[{file_data:{file_uri:url}},{text:VPROMPT}]}],tools:[{google_search:{}}]})});
- const j=await r.json();if(!r.ok)throw new Error((j.error&&j.error.message)||('Erro '+r.status));
+ const j=await r.json();if(!r.ok){const e=new Error((j.error&&j.error.message)||('Erro '+r.status));e.status=r.status;e.code=j.error&&j.error.status;throw e}
  const c=(j.candidates||[])[0]||{};const txt=((c.content&&c.content.parts)||[]).map(p=>p.text||'').join('').trim();
  const src=[];((c.groundingMetadata&&c.groundingMetadata.groundingChunks)||[]).forEach(g=>{if(g.web&&g.web.uri&&!src.some(x=>x.t===g.web.title))src.push({u:g.web.uri,t:g.web.title||'Fonte'})});
  return {txt,src,model}}finally{clearTimeout(t)}}
+function ytNorm(u){const m=u.match(/(?:youtu\.be\/|shorts\/|[?&]v=)([\w-]{11})/);return m?'https://www.youtube.com/watch?v='+m[1]:u}
+async function verifyVideo(url,key){url=ytNorm(url);const ms=await gModels(key);let last;
+ for(const m of ms){try{return await callModel(m,url,key)}catch(e){last=e;if(e.name==='AbortError')throw e;if(!(e.status===429||e.status===404||e.code==='RESOURCE_EXHAUSTED'||e.code==='NOT_FOUND'))throw e}}
+ throw last}
+function errPt(err){if(err.name==='AbortError')return 'o tempo acabou.';const m=String(err.message||err);
+ if(err.status===429||/quota|exhausted/i.test(m))return 'o limite de uso gratuito da chave acabou por agora. Tente de novo em alguns minutos.';
+ if(err.status===400&&/api key|API_KEY/i.test(m))return 'a chave de acesso não é válida.';
+ if(err.status===403)return 'a chave não tem permissão para este endereço.';
+ if(/private|unavailable|not found|video/i.test(m))return 'o vídeo não está disponível. Ele precisa ser público.';
+ if(/Failed to fetch|NetworkError/i.test(m))return 'sem conexão com a internet ou acesso bloqueado.';
+ return m.slice(0,120)}
 function vresHtml(r){let txt=r.txt.replace(/[*#`]/g,'');if(!r.src.length)txt=txt.replace(/VEREDITO:[^\n]*/,'VEREDITO: Não consegui verificar');
  const lines=txt.split('\n').map(l=>l.trim()).filter(Boolean);const ver=(txt.match(/VEREDITO:\s*([^\n]+)/)||[])[1]||'Não consegui verificar';
  return `<h2 class="sec" id="vrh" tabindex="-1">Resultado</h2><div class="perto"><p style="font-weight:800;font-size:18px;color:${/^não confere|^fora/i.test(ver)?'var(--red,#c81e3f)':/^confere/i.test(ver)?'var(--ok)':'var(--ink)'}">${esc(ver)}</p>${lines.filter(l=>!/^VEREDITO:/.test(l)).map(l=>`<p>${esc(l)}</p>`).join('')}
- <h3 style="margin-top:10px">Fontes encontradas na busca</h3>${r.src.length?`<ul style="margin:0;padding-left:20px">${r.src.map(x=>`<li style="margin:0 0 6px"><a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a></li>`).join('')}</ul>`:'<p>Nenhuma fonte encontrada. Por isso, o resultado é: não consegui verificar.</p>'}
+ <h3 style="margin-top:10px">Fontes encontradas na busca</h3>${r.src.length?`<ul style="margin:0;padding-left:20px">${r.src.map(x=>`<li style="margin:0 0 6px"><a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a></li>`).join('')}</ul>`:'<p>Nenhuma fonte encontrada. Por isso, o resultado é: não consegui verificar.</p>'}<p class="sm" style="margin-top:8px"><a href="#den">Ir para onde denunciar</a></p>
  ${canSpeak()?`<button class="btn soft" data-vresouvir="1" type="button" style="width:auto;padding:0 16px;margin-top:6px">${ic('M3 10v4h4l5 4V6L7 10zM16 8a5 5 0 0 1 0 8',2)} Ouvir o resultado</button>`:''}</div>`}
 let VRES=null;
+const DEN=[
+{t:'No próprio YouTube',d:'No vídeo, toque em Mais opções, depois em Denunciar, e escolha o motivo.',l:null},
+{t:'Desinformação sobre urna e eleições',d:'Sistema de Alertas de Desinformação Eleitoral (Siade), do TSE. É anônimo.',l:['https://www.tse.jus.br/eleicoes/sistema-de-alertas','Abrir o Siade, do TSE']},
+{t:'Propaganda eleitoral irregular ou vídeo falso de candidato',d:'Aplicativo Pardal, da Justiça Eleitoral.',l:['https://www.tse.jus.br/comunicacao/noticias/2026/Agosto/pardal-ja-esta-disponivel-para-denuncias-de-irregularidades-na-propaganda-eleitoral','Saber sobre o Pardal']},
+{t:'Discriminação ou direito violado',d:'Disque 100, gratuito e pode ser anônimo. Ou o Ministério Público de Pernambuco.',l:['tel:100','Ligar para o Disque 100'],l2:['tel:+558002819455','Ligar para o MPPE: 0800 281 9455']}];
+function denHtml(h){return `<${h} class="sec" id="den">Onde denunciar</${h}>${DEN.map(x=>`<div class="perto"><h3>${esc(x.t)}</h3><p>${esc(x.d)}</p>${x.l?`<p class="sm"><a href="${x.l[0]}" ${x.l[0].startsWith('http')?'target="_blank" rel="noopener"':''}>${esc(x.l[1])}</a></p>`:''}${x.l2?`<p class="sm"><a href="${x.l2[0]}">${esc(x.l2[1])}</a></p>`:''}</div>`).join('')}<p class="sm mut" style="margin:6px 0 0">Fontes: TSE e gov.br. Conferido em novembro de 2026.</p>`}
+function vDenuncia(){return `<div class="bar"><button class="ib" data-x="back" aria-label="Voltar" type="button">${ic(P.back)}</button><span class="sm mut">Direcionar</span><span style="width:40px"></span></div><h1 style="font-size:24px;line-height:1.2;margin:4px 0 8px">Denunciar um vídeo ou boato</h1><p style="margin:0 0 8px;line-height:1.5">Escolha o canal certo para cada caso.</p>${denHtml('h2')}`}
 const VEX={t:'Urna eletrônica "votando sozinha"',c:'YouTube, vídeo publicado em 2014',v:'Não confere',e:'O vídeo é de 26 de outubro de 2014, em Torres, no Rio Grande do Sul. A urna travou e fez um som contínuo, mas não registrou votos. Uma técnica trocou a urna e a votação seguiu sem irregularidades. Em 2026, o vídeo voltou a circular como se fosse fraude no segundo turno.',f:'Justiça Eleitoral, Fato ou Boato',d:'29/10/2026',u:'https://www.justicaeleitoral.jus.br/fato-ou-boato/checagens/2026/e-falso-que-video-mostre-urna-registrando-votos-sozinha-apos-as-17h-nas-eleicoes-2026',tr:'A urna estava travada, inoperante e com o sinal sonoro acionado.'};
 function vexTxt(){return 'Exemplo do nosso teste. Vídeo: '+VEX.t+'. Resultado: '+VEX.v+'. '+VEX.e+' Fonte: '+VEX.f+', '+VEX.d+'.'}
 function vVideo(){
@@ -938,14 +958,15 @@ function vVideo(){
  <form id="vf"><label for="vl" style="font-weight:700;display:block;margin:0 0 6px">Link do vídeo</label><input id="vl" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=..." style="width:100%;box-sizing:border-box;min-height:48px;border:1px solid var(--line);border-radius:14px;padding:0 14px;font:inherit;background:var(--card);color:var(--ink)"><button class="btn" type="submit" style="margin-top:10px">Verificar vídeo</button></form>
  <p id="vmsg" role="status" class="sm" style="margin:8px 0 0;line-height:1.5"></p>
  <div id="vres">${VRES?vresHtml(VRES):''}</div>
- <h2 class="sec">Exemplo do nosso teste</h2>
- <div class="perto"><p class="sm mut" style="margin:0 0 4px">${esc(VEX.c)}</p><h3>${esc(VEX.t)}</h3><p style="font-weight:800;color:var(--red,#c81e3f);font-size:18px">${esc(VEX.v)}</p><p>${esc(VEX.e)}</p><p class="sm"><b>Trecho da fonte:</b> "${esc(VEX.tr)}"</p><p class="sm"><a href="${VEX.u}" target="_blank" rel="noopener">Fonte: ${esc(VEX.f)}, ${esc(VEX.d)}</a></p>${canSpeak()?`<button class="btn soft" data-vouvir="1" type="button" style="width:auto;padding:0 16px;margin-top:6px">${ic('M3 10v4h4l5 4V6L7 10zM16 8a5 5 0 0 1 0 8',2)} Ouvir o resultado</button>`:''}</div>`}
+ <h2 class="sec">Exemplo: um vídeo que já testamos</h2>
+ <div class="perto"><p class="sm mut" style="margin:0 0 4px">${esc(VEX.c)}</p><h3>${esc(VEX.t)}</h3><p style="font-weight:800;color:var(--red,#c81e3f);font-size:18px">${esc(VEX.v)}</p><p>${esc(VEX.e)}</p><p class="sm"><b>Trecho da fonte:</b> "${esc(VEX.tr)}"</p><p class="sm"><a href="${VEX.u}" target="_blank" rel="noopener">Fonte: ${esc(VEX.f)}, ${esc(VEX.d)}</a></p>${canSpeak()?`<button class="btn soft" data-vouvir="1" type="button" style="width:auto;padding:0 16px;margin-top:6px">${ic('M3 10v4h4l5 4V6L7 10zM16 8a5 5 0 0 1 0 8',2)} Ouvir o resultado</button>`:''}</div>${denHtml('h2')}`}
 function vInicio(){
  return `<h1 class="sr">Veri+ — Início: informações cívicas</h1><div class="hd"><div class="logo">${shieldLogo()}<div><b>Veri<span>+</span></b><small>Verifique. Participe.</small></div></div></div>
- <p style="margin:4px 0 14px;line-height:1.5">Informações cívicas com fonte oficial, para Pernambuco. Toque em um tema para ouvir ou ler.</p>
+ <p style="margin:4px 0 14px;line-height:1.5">Verifique vídeos do YouTube e encontre informações cívicas com fonte oficial, para Pernambuco.</p>
+ <h2 class="sec">Verificar vídeo do YouTube</h2>
+ <button class="civ" data-video="1" type="button" style="border:2px solid var(--pu)"><span class="ci" aria-hidden="true">${ic('M3 6h18v12H3zM10 9l5 3-5 3z',2)}</span><span><b>Verificar um vídeo</b><small>Compartilhe do YouTube ou cole o link. O resultado vem em áudio, com fonte.</small></span></button>
+ <button class="civ" data-denuncia="1" type="button"><span class="ci" aria-hidden="true">${ic('M4 21V4h11l-1 4h6v9h-8l1-4H4',2)}</span><span><b>Denunciar um vídeo ou boato</b><small>YouTube, TSE (Siade), Pardal, Disque 100 e MPPE</small></span></button>
  ${CIVSEC.map(([k,l])=>`<h2 class="sec">${l}</h2>${CIV.filter(c=>c.sec===k).map(c=>`<button class="civ" data-civ="${c.id}" type="button"><span class="ci" aria-hidden="true">${ic(CIVICO[k],2)}</span><span><b>${esc(c.t)}</b><small>${esc(c.r)}</small></span></button>`).join('')}`).join('')}
- <h2 class="sec">Verificar vídeo</h2>
- <button class="civ" data-video="1" type="button"><span class="ci" aria-hidden="true">${ic('M3 6h18v12H3zM10 9l5 3-5 3z',2)}</span><span><b>Verificar vídeo do YouTube</b><small>Cole o link e ouça o resultado, com fonte</small></span></button>
  <h2 class="sec">Perto de você</h2>
  <button class="civ" data-perto="1" type="button"><span class="ci" aria-hidden="true">${ic('M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z',2)}</span><span><b>Instituições e projetos em PE</b><small>Associações, reabilitação, esporte e serviços públicos</small></span></button>
  <h2 class="sec">Desconfie e confira</h2>
@@ -996,13 +1017,8 @@ function vAprender(){const total=CHAL.length+TRILHAS.length;const done=Object.ke
  ${CHAL.map((c,i)=>`<div class="chal"><div class="ci">${ic('M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z')}</div><div><b>${c.t}</b><p>${c.d}</p><button class="btn" data-ch="${i}" type="button">${S.learn['_'+c.id]?'Refazer':'Começar'}</button></div></div>`).join('')}
  <h2 class="sec">Aprenda a verificar</h2>
  <div class="grid4">${TRILHAS.map(([t,d,p],i)=>`<button class="tile" data-tr="${i}" type="button">${ic(p,2)}<b>${t}</b><small>${d}</small></button>`).join('')}</div>
- <h2 class="sec">Livros para entender</h2><p class="sm mut" style="margin:-4px 0 0">Para quem quer ir além do app.</p>
- ${LIVROS.map(([tema,t,a,ed,why,c])=>`<div class="book"><div class="cover" style="background:${c}" aria-hidden="true">${esc(t)}</div><div><span class="tagp">${esc(tema)}</span><b>${esc(t)}</b><small>${esc(a)} · ${esc(ed)}</small><p>${esc(why)}</p></div></div>`).join('')}
- <h2 class="sec">Leituras gratuitas</h2>
- ${GRATIS.map(([t,o,u])=>`<a class="free" href="${u}" target="_blank" rel="noopener"><span><b>${esc(t)}</b><small>${esc(o)}</small></span>${ic(P.ext)}</a>`).join('')}
- <h2 class="sec">Livres para adaptar</h2>
- <p class="sm mut" style="margin:-4px 0 8px">Licença aberta: podem virar áudio, Libras e leitura fácil no app.</p>
- ${ABERTOS.map(([t,o,l,u])=>`<a class="free" href="${u}" target="_blank" rel="noopener"><span><b>${esc(t)}</b><small>${esc(o)}</small><small style="display:block;color:var(--ok);font-weight:600;margin-top:2px">${esc(l)}</small></span>${ic(P.ext)}</a>`).join('')}`}
+`}
+function som(ok){try{const A=window.AudioContext||window.webkitAudioContext;if(!A)return;const ac=som.ac||(som.ac=new A());if(ac.state==='suspended')ac.resume();const t=ac.currentTime;const tons=ok?[[660,0],[990,.13]]:[[220,0],[165,.16]];tons.forEach(([f,d])=>{const o=ac.createOscillator(),g=ac.createGain();o.type=ok?'sine':'square';o.frequency.value=f;g.gain.setValueAtTime(0.0001,t+d);g.gain.exponentialRampToValueAtTime(ok?0.35:0.18,t+d+0.02);g.gain.exponentialRampToValueAtTime(0.0001,t+d+(ok?0.22:0.3));o.connect(g).connect(ac.destination);o.start(t+d);o.stop(t+d+0.35)})}catch(e){}}
 function vDesafio(i,step){const c=CHAL[i];
  if(c.opts){const it=c.items[step];return `<div class="bar"><button class="ib" data-x="back" aria-label="Voltar" type="button">${ic(P.back)}</button><h1>${c.t}</h1><span style="width:40px"></span></div>
   <p class="sm mut">Pergunta ${step+1} de ${c.items.length}</p><div class="q"><p class="sm mut">Esta afirmação é…</p><p class="stmt">“${esc(it[0])}”</p>${c.opts.map(o=>`<button class="ans" data-a="${o}" type="button">${o}</button>`).join('')}<div id="fb"></div></div>`}
@@ -1068,11 +1084,11 @@ function vFontes(){const t=[['Eleições','TSE, TRE‑PE, legislação eleitoral
  <div class="box"><h3>Fontes que podemos utilizar</h3><table class="ft">${t.map(([a,b])=>`<tr><td>${a}</td><td>${b}</td></tr>`).join('')}</table></div>
  <div class="box"><h3>Em qual fonte confiar?</h3><ol class="rag"><li><b>Fonte primária:</b> documento original, lei, base de dados oficial.</li><li><b>Fonte técnica:</b> universidade, instituição científica, órgão técnico.</li><li><b>Checagem independente:</b> agência que mostra método e links.</li><li><b>Outras jornalísticas:</b> para contexto e comparação.</li></ol><p class="sm mut">Fonte oficial não é verdade absoluta: conferimos autoria, método, data e escopo.</p></div>`}
 
-const FKEYS=['data-gksave','data-vresouvir','data-video','data-vouvir','data-perto','data-pertoouvir','data-civ','data-tg','data-x','data-go','data-post','data-cat','data-tema','data-modo','data-freq','data-fs','data-why','data-detail','data-ask','data-aa','data-am','data-share','id'];
+const FKEYS=['data-denuncia','data-gksave','data-vresouvir','data-video','data-vouvir','data-perto','data-pertoouvir','data-civ','data-tg','data-x','data-go','data-post','data-cat','data-tema','data-modo','data-freq','data-fs','data-why','data-detail','data-ask','data-aa','data-am','data-share','id'];
 function render(){
  const top=S.stack[S.stack.length-1];let h;const key=top?top.s+':'+(top.id||top.i||''):S.nav;const sc=$('#scr');const same=key===S.lastKey;const st=sc.scrollTop;
  let fsel=null;const ae=document.activeElement;if(same&&ae&&sc.contains(ae)){for(const a of FKEYS){const v=ae.getAttribute(a);if(v!==null){fsel=`[${a}="${CSS.escape(v)}"]`+(a==='data-am'?`[data-k="${ae.dataset.k}"]`:'');break}}}
- if(top){h={detalhe:()=>vDetalhe(top.id),desafio:()=>vDesafio(top.i,top.step),trilha:()=>vTrilha(top.i),acess:vAcess,priv:vPriv,fontes:vFontes,assist:vAssist,civ:()=>vCivico(top.id),perto:vPerto,video:vVideo}[top.s]()}
+ if(top){h={detalhe:()=>vDetalhe(top.id),desafio:()=>vDesafio(top.i,top.step),trilha:()=>vTrilha(top.i),acess:vAcess,priv:vPriv,fontes:vFontes,assist:vAssist,civ:()=>vCivico(top.id),perto:vPerto,video:vVideo,denuncia:vDenuncia}[top.s]()}
  else h={inicio:vInicio,aprender:vAprender,historico:vHist,mitos:vMitos,config:vConfig}[S.nav]();
  $('#scr').innerHTML=h;
  document.querySelectorAll('[data-nav]').forEach(b=>b.toggleAttribute('aria-current',false)||(b.dataset.nav===S.nav&&b.setAttribute('aria-current','page')));
@@ -1083,7 +1099,7 @@ const af=$('#af');if(af){af.onsubmit=e=>{e.preventDefault();const i=$('#ai');con
  const key=gk();if(!key){m.textContent='A verificação automática ainda não foi ativada neste aparelho. Veja abaixo o resultado do nosso teste.';return}
  b.disabled=true;b.textContent='Verificando...';m.textContent='Verificando o vídeo. Isso pode levar até 1 minuto.';let tk=0;const iv=setInterval(()=>{tk++;m.textContent=(tk%2?'Ainda verificando. ':'Ainda verificando, aguarde. ')+'Já se passaram '+(tk*15)+' segundos.'},15000);
  try{VRES=await verifyVideo(v,key);$('#vres').innerHTML=vresHtml(VRES);m.textContent='Resultado pronto.';const h=$('#vrh');if(h)h.focus();if(S.cfg.narr||S.cfg.aouvir)falar($('#vres').textContent)}
- catch(err){m.textContent='Não consegui verificar agora: '+(err.name==='AbortError'?'o tempo acabou.':String(err.message||err).slice(0,140))+' Veja abaixo o resultado do nosso teste.'}
+ catch(err){m.textContent='Não consegui verificar este vídeo: '+errPt(err)+' O exemplo abaixo é de outro vídeo, do nosso teste.'}
  finally{clearInterval(iv);b.disabled=false;b.textContent='Verificar vídeo'}};
  const f=$('#sf');if(f)f.onsubmit=e=>{e.preventDefault();const v=$('#q').value;if(v.trim())checkFlow(v,{force:false})};
  if(same){if(!(top&&top.s==='assist'))sc.scrollTop=st;if(fsel){const n=sc.querySelector(fsel);if(n)n.focus({preventScroll:true})}}
@@ -1124,10 +1140,10 @@ document.addEventListener('click',e=>{const b=e.target.closest('button,[data-det
  if(d.seg){S.hseg=d.seg;render();return}
  if(d.a){const top=S.stack[S.stack.length-1];const c=CHAL[top.i],it=c.items[top.step];const ok=d.a===it[1];
   document.querySelectorAll('.ans').forEach(x=>{x.disabled=true;if(x.dataset.a===it[1])x.classList.add('right')});if(!ok)b.classList.add('wrong');
-  if(ok){top.ok++;S.pts+=10}$('#fb').innerHTML=`<p class="fb">${ok?'Isso! ':'Quase. '}${esc(it[2])}</p><button class="btn" data-x="next" type="button" style="margin-top:8px">${top.step<c.items.length-1?'Próxima':'Concluir'}</button>`;return}
- if(d.m){const top=S.stack[S.stack.length-1];const c=CHAL[top.i];const it=c.items[+d.m];document.querySelectorAll('.ans').forEach(x=>{x.disabled=true;if(c.items[+x.dataset.m][1])x.classList.add('right')});if(!it[1])b.classList.add('wrong');else{top.ok=1;S.pts+=20}
-  $('#fb').innerHTML=`<p class="fb">${esc(it[2])}</p><button class="btn" data-x="next" type="button" style="margin-top:8px">Concluir</button>`;return}
- if(d.civ){push({s:'civ',id:d.civ});return}  if(d.perto){push({s:'perto'});return}  if(d.video){push({s:'video'});return}  if(d.vouvir){falar(vexTxt());return}  if(d.vresouvir){const r=$('#vres');if(r)falar(r.textContent.replace('Ouvir o resultado',''));return}  if(d.gksave){const i=$('#gki');try{if(i.value.trim())localStorage.setItem(GKEY,i.value.trim());else localStorage.removeItem(GKEY)}catch(e){}GMODEL=null;const st=$('#gkst');if(st)st.textContent=gk()?'Chave salva neste aparelho.':'Chave removida.';i.value='';return}  if(d.pertoouvir){falar(pertoTxt());return}
+  som(ok);if(ok){top.ok++;S.pts+=10}$('#fb').innerHTML=`<p class="fb" role="status">${ok?'Acertou! ':'Errou. '}${esc(it[2])}</p><button class="btn" data-x="next" type="button" style="margin-top:8px">${top.step<c.items.length-1?'Próxima':'Concluir'}</button>`;return}
+ if(d.m){const top=S.stack[S.stack.length-1];const c=CHAL[top.i];const it=c.items[+d.m];document.querySelectorAll('.ans').forEach(x=>{x.disabled=true;if(c.items[+x.dataset.m][1])x.classList.add('right')});som(!!it[1]);if(!it[1])b.classList.add('wrong');else{top.ok=1;S.pts+=20}
+  $('#fb').innerHTML=`<p class="fb" role="status">${it[1]?'Acertou! ':'Errou. '}${esc(it[2])}</p><button class="btn" data-x="next" type="button" style="margin-top:8px">Concluir</button>`;return}
+ if(d.civ){push({s:'civ',id:d.civ});return}  if(d.perto){push({s:'perto'});return}  if(d.video){push({s:'video'});return}  if(d.denuncia){push({s:'denuncia'});return}  if(d.vouvir){falar(vexTxt());return}  if(d.vresouvir){const r=$('#vres');if(r)falar(r.textContent.replace('Ouvir o resultado',''));return}  if(d.gksave){const i=$('#gki');try{if(i.value.trim())localStorage.setItem(GKEY,i.value.trim());else localStorage.removeItem(GKEY)}catch(e){}GMODELS=null;const st=$('#gkst');if(st)st.textContent=gk()?'Chave salva neste aparelho.':'Chave removida.';i.value='';return}  if(d.pertoouvir){falar(pertoTxt());return}
  if(d.civouvir){const c=CIV.find(x=>x.id===d.civouvir);if(c)falar(civTxt(c));return}
  if(d.civlibras){const c=CIV.find(x=>x.id===d.civlibras);if(c)librasModal(civTxt(c));return}
  if(d.mito){openMito(d.mito);return}
@@ -1184,7 +1200,7 @@ const nav1=t=>['nav',t];
 const AI_INT=[
  [/^(oi|ol[aá]|bom dia|boa tarde|boa noite|e a[ií])(?=[\s!,.?]|$)/,()=>({n:'Oi! Posso explicar a tela em que você estava, mostrar como verificar uma mensagem ou levar você para outra parte do app. O que você precisa?',s:'Oi!\nPosso explicar a tela.\nPosso ajudar a verificar uma mensagem.\nO que você precisa?'})],
  [/(explica|explique|descrev|o que tem|onde (eu )?estou|que tela)/,()=>({n:'Você estava aqui: '+(S.aFrom||'Tela Início.'),s:(S.aFrom||'Tela Início.').split('. ').slice(0,4).join('.\n'),a:[['Voltar para lá','back']]})],
- [/(abr|ir|vai|leva|lev[ae]|mostr).{0,25}(aprender|desafio|trilha|livro)|^aprender$/,()=>({n:'Abrindo a aba Aprender: desafios, trilhas e livros para treinar a checagem.',s:'Vou abrir a aba Aprender.\nLá tem desafios e livros.',go:'aprender'})],
+ [/(abr|ir|vai|leva|lev[ae]|mostr).{0,25}(aprender|desafio|trilha|livro)|^aprender$/,()=>({n:'Abrindo a aba Aprender: desafios e trilhas para treinar a checagem.',s:'Vou abrir a aba Aprender.\nLá tem desafios e trilhas.',go:'aprender'})],
  [/(abr|ir|vai|leva|lev[ae]|mostr|ver).{0,25}hist[oó]rico|^hist[oó]rico$/,()=>({n:'Abrindo o Histórico com tudo o que você já verificou.',s:'Vou abrir o Histórico.\nLá estão suas verificações.',go:'historico'})],
  [/(abr|ir|vai|leva|lev[ae]).{0,25}(configura|ajuste)|^configura/,()=>({n:'Abrindo as Configurações.',s:'Vou abrir as Configurações.',go:'config'})],
  [/(abr|ir|vai|volt|leva|lev[ae]).{0,25}in[ií]cio|^in[ií]cio$/,()=>({n:'Voltando para o Início.',s:'Vou voltar para o Início.',go:'inicio'})],
@@ -1326,16 +1342,16 @@ const CIV=[
  simples:'Você pode pedir informação ao governo.\nNão precisa explicar o motivo.\nSe negarem, você pode recorrer.'}];
 
 const WOPTS=[['narr','Narração do app','Só para quem não usa TalkBack ou VoiceOver'],['sr','Já uso leitor de tela','TalkBack ou VoiceOver: desliga a narração do app'],['fs','Letra maior',''],['hc','Alto contraste',''],['facil','Leitura fácil','Frases curtas, uma ideia por linha'],['leg','Legendas da conversa','A conversa aparece escrita'],['libras','Libras','Botão Ver em Libras nos resultados']];
-const W_RESUMO='O Veri+ traz informações cívicas de Pernambuco, ensina a desmontar boatos e mostra instituições perto de você, sempre com fonte oficial. Ele funciona com TalkBack e VoiceOver.';
+const W_RESUMO='O Veri+ verifica vídeos do YouTube, traz seus direitos e informações cívicas de Pernambuco e mostra instituições perto de você, sempre com fonte oficial. Ele funciona com TalkBack e VoiceOver.';
 const W_COMO='Funciona assim. Primeiro, você manda a informação: falando, escrevendo, com um print ou compartilhando do WhatsApp. Depois, o agente do Veri+ separa fato de opinião e procura em fontes oficiais, como o TSE. Por fim, você ouve o resultado: confere, não confere, ou está fora de contexto, e o porquê. Se não houver fonte, o app avisa que não conseguiu verificar. Em qualquer tela, o botão de acessibilidade fica no canto inferior esquerdo, e o assistente no canto superior direito.';
 let W=null;
 function beep(){try{const a=new (window.AudioContext||window.webkitAudioContext)();const o=a.createOscillator(),g=a.createGain();o.frequency.value=880;g.gain.value=.15;o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+.18);setTimeout(()=>a.close(),400)}catch(e){}}
-function welcome(){const ph=$('.phone');let w=$('.wel');if(w)w.remove();w=document.createElement('div');w.className='wel';w.setAttribute('role','dialog');w.setAttribute('aria-modal','true');w.setAttribute('aria-label','Boas-vindas ao Veri+');W={el:w,st:'tap'};
- ph.appendChild(w);wDraw();
+function welcome(){const ph=$('.phone');let w=$('.wel');if(w)w.remove();w=document.createElement('div');w.className='wel';w.setAttribute('role','dialog');w.setAttribute('aria-modal','true');w.setAttribute('aria-label','Boas-vindas ao Veri+');W={el:w,st:'menu'};
+ ph.appendChild(w);wDraw();setTimeout(()=>{const b=w.querySelector('.band');if(b)b.focus()},50);
  w.addEventListener('click',e=>{const b=e.target.closest('[data-w]');if(!b)return;e.stopPropagation();wDo(b.dataset.w)})}
-const WBANDS={menu:[['civ','Informações cívicas','Em cima'],['mitos','Mitos e verdades','No meio'],['aprender','Aprender e jogar','Embaixo']]};
+const WBANDS={menu:[['video','Verificar vídeo do YouTube','Em cima'],['civ','Direitos e informações cívicas','No meio'],['mitos','Mitos e verdades','Embaixo']]};
 function wSay(){const st=W.st;const sr=' Com leitor de tela, toque duas vezes.';
- if(st==='menu'){const r=W.told?'':W_RESUMO+' ';W.told=true;return r+'O que você quer fazer? Toque em cima da tela para informações cívicas, como votar e seus direitos. No meio, para mitos e verdades. Embaixo, para aprender e jogar.'+(S.dict?' Ou toque em Responder falando, no topo, e diga a opção depois do sinal.':'')+' No topo também estão Repetir, Ajustar, Narração do app e Pular.'}
+ if(st==='menu'){const r=W.told?'':W_RESUMO+' ';W.told=true;return r+'Escolha uma opção. Toque em cima da tela para verificar um vídeo do YouTube. No meio, para seus direitos e informações cívicas. Embaixo, para mitos e verdades.'+(S.dict?' Ou toque em Responder falando, no topo, e diga a opção depois do sinal.':'')+' No topo também estão Repetir, Ajustar, Narração do app e Pular.'}
  if(st==='verif')return (S.dict?'Toque em cima da tela e fale a frase depois do sinal.':'')+' Toque no meio para ouvir um exemplo. Toque embaixo para escrever a frase.'+' Para voltar, toque em Voltar, no topo.';
  if(st==='como')return W_COMO+' Toque em cima para verificar uma informação, no meio para ouvir de novo, ou embaixo para voltar às opções.';
  if(st==='ajuste')return 'Ajustes. A primeira opção é a narração por voz, que está '+(S.cfg.narr?'ligada':'desligada')+'. Depois: já uso leitor de tela, letra maior, alto contraste, leitura fácil, legendas e Libras. No fim da tela, o botão Começar.';
@@ -1345,14 +1361,15 @@ function wDraw(){const w=W.el,st=W.st;
  const top=`<div class="wtop">${st==='menu'?'':`<button data-w="menu" type="button">Voltar</button>`}<button data-w="repetir" type="button">Repetir</button>${S.dict?`<button data-w="ouvir" type="button" class="${W.listen?'on':''}">${W.listen?'Ouvindo…':'Responder falando'}</button>`:''}${st==='menu'?`<button data-w="ajuste" type="button">Ajustar</button>`:''}${st==='menu'?`<button data-w="o-narr" type="button" aria-pressed="${!!S.cfg.narr}">Narração do app: ${S.cfg.narr?'ligada':'desligada'}</button>`:''}<button data-w="go" type="button">Pular</button></div>`;
  if(st==='ajuste'){const on=k=>k==='fs'?S.cfg.fs>16:!!S.cfg[k];
   w.innerHTML=`${top}<div class="st2"><h1>Ajustar o app para mim</h1><p>Dá para mudar depois, em qualquer tela, no botão de acessibilidade.</p>${WOPTS.map(([k,l,d])=>`<button class="wo" data-w="o-${k}" aria-pressed="${on(k)}" type="button"><span>${l}${d?`<small>${d}</small>`:''}</span><b>${on(k)?'Ligado':'Desligado'}</b></button>`).join('')}<button class="go" data-w="go" type="button">Começar</button></div>`;return}
- const tt={menu:'O que você quer fazer?'}[st];
-  const sub={menu:'Informações cívicas com fonte oficial, para Pernambuco.',verif:'Fale, ouça um exemplo ou escreva.',como:'Você manda a informação. O agente procura em fontes oficiais. Você ouve o resultado e o porquê.'}[st];
+ const tt={menu:'Escolha uma opção'}[st];
+  const sub={menu:'Verifique vídeos do YouTube e conheça seus direitos, com fonte oficial.',verif:'Fale, ouça um exemplo ou escreva.',como:'Você manda a informação. O agente procura em fontes oficiais. Você ouve o resultado e o porquê.'}[st];
  w.innerHTML=`${top}<div class="whd"><h1>${tt}</h1><p>${sub}</p>${W.heard?`<p class="heard" role="status">Ouvi: “${esc(W.heard)}”</p>`:''}</div><div class="bands">${WBANDS[st].filter(b=>b[0]!==null||S.dict).map(([k,l,pos])=>`<button class="band" data-w="${k||'falar'}" type="button"><small>${pos}</small>${l}</button>`).join('')}</div>`}
 function wGo(after,to){try{save()}catch(e){}if(W&&W.el)W.el.remove();W=null;S.stack=[];S.nav=to||'inicio';render();if(after)after();else{narrar(telaNarr());const h=$('#scr h1');if(h){h.setAttribute('tabindex','-1');h.focus()}}}
 (()=>{try{const q=new URLSearchParams(location.search);const sh=((q.get('url')||'')+' '+(q.get('text')||'')+' '+(q.get('title')||''));const mt=sh.match(/https?:\/\/\S*(youtube\.com|youtu\.be)\S*/);if(!mt)return;history.replaceState(null,'',location.pathname);setTimeout(()=>{wGo(()=>{push({s:'video'});const i=document.getElementById('vl');if(i){i.value=mt[0];document.getElementById('vf').requestSubmit()}})},400)}catch(e){}})();
 function wListen(target){if(!S.dict)return;W.wTarget=target;W.listen=true;wDraw();calar();beep();S.dictTarget='wel';setTimeout(()=>S.dict.start().catch(()=>{W&&(W.listen=false,wDraw())}),250)}
 function wVoice(text){if(!W)return;W.listen=false;W.heard=text;const t=text.toLowerCase();
  if(/repet|de novo|ajuda/.test(t)){wDraw();narrar(wSay());return}
+ if(/v[ií]deo|youtube|verific/.test(t)){wDo('video');return}
  if(/c[ií]vic|direit|votar|voto|informa/.test(t)){wDo('civ');return}
  if(/perto|institui|associa|projeto/.test(t)){calar();wGo(()=>push({s:'perto'}));return}
  if(/mito|boato|verdade|mentira/.test(t)){wDo('mitos');return}
@@ -1360,7 +1377,7 @@ function wVoice(text){if(!W)return;W.listen=false;W.heard=text;const t=text.toLo
  if(/ajust|configur|letra|contraste|libras/.test(t)){wDo('ajuste');return}
  if(/in[ií]cio|pular|come[cç]ar|entrar/.test(t)){wDo('go');return}
  if(/leitor|talkback|voice ?over/.test(t)){wDo('sr');return}
- wDraw();narrar('Não entendi: '+text+'. Diga informações cívicas, mitos, aprender, ajustar, ou início.')}
+ wDraw();narrar('Não entendi: '+text+'. Diga vídeo, direitos, mitos, aprender, ajustar, ou início.')}
 function wDo(k){const w=W.el;
  if(k==='start'){W.st='menu';wDraw();narrar(wSay());const b=w.querySelector('.band');if(b)b.focus();return}
  if(k==='repetir'){narrar(wSay());return}
@@ -1368,6 +1385,7 @@ function wDo(k){const w=W.el;
  if(k==='falar'){wListen('frase');return}
  if(k==='go'){calar();wGo();return}
  if(k==='civ'){calar();wGo();return}
+ if(k==='video'){calar();wGo(()=>push({s:'video'}));return}
  if(k==='mitos'){calar();wGo(null,'mitos');return}
  if(k==='aprender'){calar();wGo(null,'aprender');return}
  if(k==='escrever'){wGo(()=>{narrar('Escreva a frase no campo de busca, no topo da tela, e toque em Verificar.');const f=$('#q');if(f)f.focus()});return}
