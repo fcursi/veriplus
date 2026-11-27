@@ -1365,7 +1365,7 @@ function wDraw(){const w=W.el,st=W.st;
   const sub={menu:'Verifique vídeos do YouTube e conheça seus direitos, com fonte oficial.',verif:'Fale, ouça um exemplo ou escreva.',como:'Você manda a informação. O agente procura em fontes oficiais. Você ouve o resultado e o porquê.'}[st];
  w.innerHTML=`${top}<div class="whd"><h1>${tt}</h1><p>${sub}</p>${W.heard?`<p class="heard" role="status">Ouvi: “${esc(W.heard)}”</p>`:''}</div><div class="bands">${WBANDS[st].filter(b=>b[0]!==null||S.dict).map(([k,l,pos])=>`<button class="band" data-w="${k||'falar'}" type="button"><small>${pos}</small>${l}</button>`).join('')}</div>`}
 function wGo(after,to){try{save()}catch(e){}if(W&&W.el)W.el.remove();W=null;S.stack=[];S.nav=to||'inicio';render();if(after)after();else{narrar(telaNarr());const h=$('#scr h1');if(h){h.setAttribute('tabindex','-1');h.focus()}}}
-(()=>{try{const q=new URLSearchParams(location.search);const sh=((q.get('url')||'')+' '+(q.get('text')||'')+' '+(q.get('title')||''));const mt=sh.match(/https?:\/\/\S*(youtube\.com|youtu\.be)\S*/);if(!mt)return;history.replaceState(null,'',location.pathname);setTimeout(()=>{wGo(()=>{push({s:'video'});const i=document.getElementById('vl');if(i){i.value=mt[0];document.getElementById('vf').requestSubmit()}})},400)}catch(e){}})();
+/* Abertura padrão: permanecer na tela inicial. */
 function wListen(target){if(!S.dict)return;W.wTarget=target;W.listen=true;wDraw();calar();beep();S.dictTarget='wel';setTimeout(()=>S.dict.start().catch(()=>{W&&(W.listen=false,wDraw())}),250)}
 function wVoice(text){if(!W)return;W.listen=false;W.heard=text;const t=text.toLowerCase();
  if(/repet|de novo|ajuda/.test(t)){wDraw();narrar(wSay());return}
